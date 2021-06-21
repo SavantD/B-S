@@ -1,0 +1,392 @@
+{
+	"info": {
+		"_postman_id": "c4caabe3-9b1e-4992-bfbe-b3a906c1e10d",
+		"name": "B&S",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer APIs",
+			"item": [
+				{
+					"name": "create single customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n       \"email\": \"test3@tes.com\",\r\n       \"password\": \"test123\",\r\n       \"customer_name\": \"sava3\",\r\n       \"billing_address\": \"21, dehiwala\",\r\n       \"shipping_address\": \"21, dehiewal\",\r\n       \"creditcard_info\": \"XXXXXXXXXXXXXXXX,name,09/23,123\",\r\n       \"phone_no\": \"0766207044\"\r\n   }\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/customer/create-single",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customer",
+								"create-single"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create customer batch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   [{\r\n       \"email\": \"dsddsd@tes.com\",\r\n       \"password\": \"test123\",\r\n       \"customer_name\": \"sava\",\r\n       \"billing_address\": \"21, dehiwala\",\r\n       \"shipping_address\": \"21, dehiewal\",\r\n       \"creditcard_info\": \"XXXXXXXXXXXXXXXX,name,09/23,123\",\r\n       \"phone_no\": \"0766207044\"\r\n   },\r\n   {\r\n       \"email\": \"t211212121@tes.com\",\r\n       \"password\": \"dssdsdsd\",\r\n       \"customer_name\": \"sava2\",\r\n       \"billing_address\": \"21, dehiwala\",\r\n       \"shipping_address\": \"21, dehiewal\",\r\n       \"creditcard_info\": \"XXXXXXXXXXXXXXXX,name,09/23,123\",\r\n       \"phone_no\": \"0776207044\"\r\n   }\r\n   ]\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/customer/create-multiple",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customer",
+								"create-multiple"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product APIs",
+			"item": [
+				{
+					"name": "GET all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/product/fetch-all",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"product",
+								"fetch-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET products by category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/product/fetch?category_id=9",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"product",
+								"fetch"
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n       \"category_id\" : 56,\r\n       \"title\": \"title 3\",\r\n       \"name\": \"product 3\",\r\n       \"price\": 100.0,\r\n       \"tax\": 0.3\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/product/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product_Category APIs",
+			"item": [
+				{
+					"name": "GET all categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/category/fetch-all",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"category",
+								"fetch-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET category by category id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/category/fetch?category_id=9",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"category",
+								"fetch"
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n       \"name\": \"cat1\",\r\n       \"description\": \"desc1\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/category/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"category",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart APIs",
+			"item": [
+				{
+					"name": "add to cart - Customer 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"customer_id\": 55,\r\n\t\"items\": [{\r\n\t\t\t\"product_id\": 57,\r\n\t\t\t\"quantity\": 10\r\n\t\t}\r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/cart/items/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"cart",
+								"items",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add to cart - Customer 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"customer_id\": 61,\r\n\t\"items\": [{\r\n\t\t\t\"product_id\": 57,\r\n\t\t\t\"quantity\": 100\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"product_id\": 60,\r\n\t\t\t\"quantity\": 200\r\n\t\t}\r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/cart/items/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"cart",
+								"items",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order APIs",
+			"item": [
+				{
+					"name": "Place Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"customer_id\": 61,\r\n\t\"items\": [{\r\n\t\t\t\"product_id\": 57,\r\n\t\t\t\"quantity\": 100\r\n\t\t},\r\n        {\r\n\t\t\t\"product_id\": 60,\r\n\t\t\t\"quantity\": 1000\r\n\t\t}\r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/order/place-order",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"order",
+								"place-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Place Order With Discount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"customer_id\": 61,\r\n\t\"items\": [{\r\n\t\t\t\"product_id\": 57,\r\n\t\t\t\"quantity\": 10\r\n\t\t}\r\n\t],\r\n    \"coupon_code\": \"6c0efab9-3e8f-487c-9fe4-9877c2f9a7e1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/order/place-order",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"order",
+								"place-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/order/fetch-all",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"order",
+								"fetch-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all orders for Customer Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/order/fetch?customer_id=13",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"order",
+								"fetch"
+							],
+							"query": [
+								{
+									"key": "customer_id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
