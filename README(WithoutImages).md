@@ -9,6 +9,9 @@ Step 1. Design the application
 -	The customer could claim the coupon to get his discount at the next purchase (Order).
 -	Furthermore each product is mapped to a specific product category. Reason behind this approach was since its much more easier for the client to query the product results. 
 -	Main reason behind adding these additional features was that it would improve the overall User Experience (UX) factor.
+Note: As depicted in the Class diagram some methods such as login & logout was not implemented due to limited time.  Token based authentication was not implemented due to time constraints. However I’ve done this before in another sample project, which you could have a look at.
+https://github.com/SavantD/spring-security-jwt/tree/spring-sec-jwt-with-jpa
+
 
 Step 2. Implementation
  - The application was written in line to the REST-full principles and the microservice design structure. 
@@ -20,6 +23,8 @@ Step 2. Implementation
  - The Database schema/tables are created upon application bootstrap. So running DDL statements manually is unnecessary. 
  -  org.slf4j.Logger has been used for logging purposes. (At Controller & Service levels.)
  - JPQL has been utilized in some cases where querying with join columns were required.
+ - Lombok was not used in this case.
+
 
 
 
@@ -27,6 +32,7 @@ Testing & Debugging
 -	Postman was used to test the API endpoints. 
 -	The Collection of these requests (along with metadata for params & requestBody) have been attached to the GitHub itself. Please import this postman collection to test: 
 https://github.com/SavantD/B-S/blob/master/Postman%20Collection/B%26S.postman_collection.json
+
 
  
 Once you’ve imported the above json file, you’ll be seeing the API collection to test the API’s, as shown above.
