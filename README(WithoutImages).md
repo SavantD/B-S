@@ -18,7 +18,8 @@ Step 2. Implementation
  - SpringBoot was used to develop the microservices pertaining to the resources we are modifying within our app.
  - The Java SpringBoot application consists of 5 RestControllers which handles the HTTP Requests and Responses ideally for each resource. 
  - Also there is a centralized exception handler written as per the best practices in microservice design. 
- - Unit tests have been written for couple of Services using Mockito to mock the Repositories. 
+ - Unit tests have been written for multiple Services using Mockito to mock the Repositories. [CategoryServiceTest.java, ProductServiceTest.java, PriceCalculatorUtilTest.java]
+ - Also the 5 steps mentioned in "Implementation" section has bee simulated with another Unit test - CustomerCartIntegrationTest.java
  - Repetitive logic has been moved to a Utility class which handles calculation logic. This is shared amongst couple of other services. Also unit tested.
  - The Database schema/tables are created upon application bootstrap. So running DDL statements manually is unnecessary. 
  -  org.slf4j.Logger has been used for logging purposes. (At Controller & Service levels.)

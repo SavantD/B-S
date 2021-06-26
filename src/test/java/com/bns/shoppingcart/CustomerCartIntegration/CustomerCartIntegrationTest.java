@@ -119,6 +119,20 @@ public class CustomerCartIntegrationTest {
     }
 
     @Test
+    public void testAddCustomer2() throws Exception {
+        ResponseEntity<?> responseEntityMock = new ResponseEntity<>(
+                customerDTO2,
+                header,
+                HttpStatus.CREATED
+        );
+        doReturn(responseEntityMock).when(customerService).createCustomer(customerDTO2);
+        ResponseEntity<Object> responseEntity = (ResponseEntity<Object>) customerController.createSingleCustomer(customerDTO2);
+
+        assertThat(responseEntity.getStatusCodeValue()).isEqualTo(201);
+        assertTrue("responseEntity body isnt equal to the expected DTO object", responseEntity.getBody().equals(customerDTO2));
+    }
+
+    @Test
     public void testAddToCartForCustomer1() throws Exception {
         CartRequestDTO cartDTOOfCustomer1 = new CartRequestDTO();
         cartDTOOfCustomer1.setCustomerId(customer1.getId());
