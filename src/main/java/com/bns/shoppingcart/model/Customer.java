@@ -7,7 +7,7 @@ import javax.persistence.Table;
 @Entity
 @Table(schema = "bns", name = "customer")
 public class Customer extends User {
-
+    private int id; // non persisted attribute for testing purpose.
     @Column(name = "customer_name")
     private String customerName;
     @Column(name = "billing_address")
@@ -18,6 +18,14 @@ public class Customer extends User {
     private String creditCardInfo;
     @Column(name = "phone_no")
     private int phoneNo;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getCustomerName() {
         return customerName;
