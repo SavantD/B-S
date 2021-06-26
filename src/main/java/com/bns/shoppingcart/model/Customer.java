@@ -3,10 +3,12 @@ package com.bns.shoppingcart.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(schema = "bns", name = "customer")
 public class Customer extends User {
+    @Transient
     private int id; // non persisted attribute for testing purpose.
     @Column(name = "customer_name")
     private String customerName;
